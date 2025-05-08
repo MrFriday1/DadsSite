@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supreme Construction - Your Trusted Builders</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Simple animation for sections on scroll (optional) */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom scrollbar (optional, for a more modern look) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .nav-link {
+            @apply px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-blue-600 hover:text-white transition-colors;
+        }
+
+        .nav-link.active {
+            @apply bg-blue-600 text-white;
+        }
+
+        .section-title {
+            @apply text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12;
+        }
+
+        .card {
+            @apply bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out;
+        }
+
+        .cta-button {
+            @apply bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors duration-300 ease-in-out shadow-md hover:shadow-lg;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <section id="top" class="m-0 p-0"></section>
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-blue-600">Supreme Construction</a>
+            <div class="space-x-1 md:space-x-4">
+                <a href="#top" class="nav-link active hover:text-gray-300">Home</a>
+                <a href="#about" class="nav-link hover:text-gray-300">About</a>
+                <a href="#services" class="nav-link hover:text-gray-300">Services</a>
+                <a href="#portfolio" class="nav-link hover:text-gray-300">Portfolio</a>
+                <a href="#contact" class="nav-link hover:text-gray-300">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home"
+        class="bg-cover bg-center h-[70vh] md:h-[80vh] flex items-center justify-center text-white relative"
+        style="background-image: url('background.jpg');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="text-center z-10 p-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">Professional Houses</h1>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto drop-shadow-md">Your trusted partner for high-quality
+                construction and renovation services in Mississauga and the GTA.</p>
+            <a href="#contact" class="cta-button hover:text-gray-300">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 md:py-24 bg-white fade-in-section">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title m-2">About Supreme Construction</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://placehold.co/600x400/d1d5db/4b5563?text=People+Working" alt="Construction Team"
+                        class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="md:w-1/2 text-gray-700 text-lg">
+                    <p class="mb-4">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, cum laudantium! Natus ea
+                        temporibus enim quia error quis nostrum perferendis, est pariatur voluptate tempora quod
+                        perspiciatis sint magnam cum sit odit necessitatibus. Perferendis accusantium, quia et dicta
+                        odio optio pariatur.
+                    </p>
+                    <p class="mb-4">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis, enim neque quidem quos
+                        obcaecati eum doloribus provident nesciunt illum facilis?
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-blue-600">
+                        <li><span class="text-gray-700">Lorem ipsum dolor sit.</span></li>
+                        <li><span class="text-gray-700">Lorem ipsum dolor sit amet.</span></li>
+                        <li><span class="text-gray-700">Lorem ipsum dolor sit amet consectetur.</span></li>
+                        <li><span class="text-gray-700">Lorem ipsum dolor sit amet.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-16 md:py-24 bg-gray-100 fade-in-section">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-6 text-center">
+                    <div class="mb-4">
+                        <svg class="w-16 h-16 text-blue-600 mx-auto" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Residential Construction</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia,
+                        perferendis.
+                        lifestyle.</p>
+                </div>
+                <div class="card p-6 text-center">
+                    <div class="mb-4">
+                        <svg class="w-16 h-16 text-blue-600 mx-auto" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Renovations & Remodeling</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, temporibus.
+                    </p>
+                </div>
+                <div class="card p-6 text-center">
+                    <div class="mb-4">
+                        <svg class="w-16 h-16 text-blue-600 mx-auto" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.539 1.118l-3.975-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.196-1.539-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Renovations & Remodeling</h3>
+                    <p class="text-gray-600">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, autem!
+                    </p>
+                </div>
+
+                <div class="card p-6 text-center">
+                    <div class="mb-4">
+                        <svg class="w-16 h-16 text-blue-600 mx-auto" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.539 1.118l-3.975-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.196-1.539-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Renovations & Remodeling</h3>
+                    <p class="text-gray-600">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, autem!
+                    </p>
+                </div>
+
+                <div class="card p-6 text-center">
+                    <div class="mb-4">
+                        <svg class="w-16 h-16 text-blue-600 mx-auto" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.539 1.118l-3.975-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.196-1.539-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Renovations & Remodeling</h3>
+                    <p class="text-gray-600">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, autem!
+                    </p>
+                </div>
+
+                <div class="card p-6 text-center">
+                    <div class="mb-4">
+                        <svg class="w-16 h-16 text-blue-600 mx-auto" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.539 1.118l-3.975-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.196-1.539-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Renovations & Remodeling</h3>
+                    <p class="text-gray-600">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, autem!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-16 md:py-24 bg-white fade-in-section">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title m-2 text-center">Our Recent Work</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card">
+                    <img src="https://placehold.co/600x400/60a5fa/ffffff?" alt="Project 1"
+                        class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Modern Kitchen Renovation</h3>
+                        <p class="text-gray-600 text-sm">Mississauga, ON - Completed 2024</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://placehold.co/600x400/34d399/ffffff?" alt="Project 2"
+                        class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Luxury Custom Home</h3>
+                        <p class="text-gray-600 text-sm">Oakville, ON - Completed 2023</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://placehold.co/600x400/fbbf24/ffffff?" alt="Project 3"
+                        class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Commercial Office Fit-Out</h3>
+                        <p class="text-gray-600 text-sm">Toronto, ON - Completed 2024</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 md:py-24 bg-gray-100 fade-in-section">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-center m-2">Get In Touch</h2>
+            <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-xl">
+                <p class="text-center text-gray-700 mb-8 text-lg">
+                    Ready to start your next construction project or have questions? Fill out the form below or contact
+                    us directly. We proudly serve anywhere in the GTA.
+                </p>
+                <form action="#" method="POST">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <input type="text" name="name" id="name" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email
+                                Address</label>
+                            <input type="email" name="email" id="email" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number
+                            (Optional)</label>
+                        <input type="tel" name="phone" id="phone"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div class="mb-6">
+                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                        <input type="text" name="subject" id="subject" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
+                        <textarea name="message" id="message" rows="5" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="cta-button">Send Message</button>
+                    </div>
+                </form>
+                <div class="mt-10 text-center text-gray-700">
+                    <p class="text-lg font-semibold">Or Contact Us Directly:</p>
+                    <p>Phone: <a href="tel:+19055551234" class="text-blue-600 hover:underline">(416)-843-9071</a></p>
+                    <p>Email: <a href="mailto:gerardp1@gmail.com"
+                            class="text-blue-600 hover:underline">gerardp1@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-gray-300 py-12 text-center">
+        <div class="container mx-auto px-6">
+            <p>&copy; <span id="current-year"></span> Supreme Construction. All Rights Reserved.</p>
+            <p>Your Trusted Construction Partner in Mississauga, Ontario.</p>
+            <p class="text-sm mt-2">Website by Maximilian Piatek</p>
+        </div>
+    </footer>
+
+    <script>
+        // Update current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Simple fade-in animation for sections on scroll
+        const sections = document.querySelectorAll('.fade-in-section');
+        const observerOptions = {
+            root: null, // relative to document viewport
+            rootMargin: '0px',
+            threshold: 0.1 // 10% of item visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // observer.unobserve(entry.target); // Optional: unobserve after animation
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Active navigation link highlighting based on scroll position
+        const navLinks = document.querySelectorAll('.nav-link');
+        const pageSections = document.querySelectorAll('section[id]');
+
+        function updateActiveNavLink() {
+            let currentSectionId = 'home'; // Default to home
+
+            pageSections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                // Check if user has scrolled past the top of the section
+                // and not past the bottom of the section (add some offset for better UX)
+                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNavLink);
+        // Initial call to set active link on page load
+        updateActiveNavLink();
+
+    </script>
+
+</body>
+
+</html>
