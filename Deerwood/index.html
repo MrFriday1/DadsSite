@@ -8,9 +8,12 @@
 <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
 <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
 <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
-<link rel="apple-touch-icon" href="favicon/apple-touch-icon.png"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap"></noscript>
 
 
 <style>
@@ -162,9 +165,18 @@
 
   .hero-slide.active { opacity: 1; }
 
-  .hero-slide:nth-child(1) { background-image: url('images/hero2.jpg'); background-size: cover; background-position: center; }
-  .hero-slide:nth-child(2) { background-image: url('images/hero3.jpg'); background-size: cover; background-position: center; }
-  .hero-slide:nth-child(3) { background-image: url('images/hero5.jpg'); background-size: cover; background-position: center; }
+  .hero-slide-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-slide:nth-child(1) { background-size: cover; background-position: center; }
+  .hero-slide:nth-child(2) { background-image: url('images/hero3.webp'); background-size: cover; background-position: center; }
+  .hero-slide:nth-child(3) { background-image: url('images/hero5.webp'); background-size: cover; background-position: center; }
 
   .hero-overlay {
     position: absolute;
@@ -721,8 +733,8 @@
     background: var(--grey-dark);
   }
 
-  #contact .section-label::before { background: var(--green-light); }
-  #contact .section-label { color: var(--green-light); }
+  #contact .section-label::before { background: #78bb8a; }
+  #contact .section-label { color: #78bb8a; }
   #contact .section-heading { color: var(--white); }
 
   .contact-layout {
@@ -852,7 +864,7 @@
   .footer-copy {
     font-size: 0.85rem;
     font-weight: 400;
-    color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.6);
     text-align: center;
   }
 
@@ -1049,13 +1061,15 @@
 <!-- ─── HERO ─── -->
 <section id="home">
   <div class="hero-slider" id="heroSlider">
-    <div class="hero-slide active" id="slide-0"></div>
+    <div class="hero-slide active" id="slide-0">
+      <img src="images/hero2.webp" alt="" class="hero-slide-img" fetchpriority="high" loading="eager" width="1920" height="1080">
+    </div>
     <div class="hero-slide" id="slide-1"></div>
     <div class="hero-slide" id="slide-2"></div>
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <img src="images/logo.png" alt="Deerwood Custom Millwork Solutions" class="hero-logo">
+    <img src="images/logo.png" alt="Deerwood Custom Millwork Solutions" class="hero-logo" width="952" height="415">
     <p class="hero-sub">With a management team that brings over 75 years of millwork experience, Deerwood offers industrial products, nationwide delivery, and the expertise to bring new concepts to light.</p>
     <div class="hero-actions">
       <a href="#our-work" class="btn-primary">Our Work</a>
@@ -1082,11 +1096,11 @@
         <div class="stat-label" style="white-space: nowrap;">Years Combined<br>Experience</div>
       </div>
       <div class="stat-item reveal">
-        <div class="stat-visual"><img src="images/leed.png" alt="LEED Certified" style="height:112px;width:auto;object-fit:contain;"></div>
+        <div class="stat-visual"><img src="images/leed.png" alt="LEED Certified" width="273" height="272" style="height:112px;width:auto;object-fit:contain;"></div>
         <div class="stat-label">Certified Products</div>
       </div>
       <div class="stat-item reveal">
-        <div class="stat-visual"><img src="images/awmac.png" alt="AWMAC Member" style="height:112px;width:auto;object-fit:contain;"></div>
+        <div class="stat-visual"><img src="images/awmac.png" alt="AWMAC Member" width="1161" height="725" style="height:112px;width:auto;object-fit:contain;"></div>
         <div class="stat-label">Member in Good Standing</div>
       </div>
     </div>
@@ -1108,7 +1122,7 @@
 
     <div class="work-cards">
       <div class="work-card reveal">
-        <img class="work-card-img" src="images/hero5.jpg" alt="CNC Machining">
+        <img class="work-card-img" loading="lazy" src="images/hero5.webp" alt="CNC Machining">
         <div class="work-card-overlay">
           <div class="work-card-label">Precision</div>
           <div class="work-card-title">CNC Machining</div>
@@ -1116,7 +1130,7 @@
         </div>
       </div>
       <div class="work-card reveal">
-        <img class="work-card-img" src="images/About.JPG" alt="Handcrafted Millwork">
+        <img class="work-card-img" loading="lazy" src="images/About.webp" alt="Handcrafted Millwork">
         <div class="work-card-overlay">
           <div class="work-card-label">Craftsmanship</div>
           <div class="work-card-title">Handcrafted Millwork</div>
@@ -1133,7 +1147,7 @@
     <div class="section-label reveal">About Us</div>
     <div class="about-layout">
       <div class="about-img reveal">
-        <img src="images/King.jpg" alt="Deerwood Millwork workshop">
+        <img src="images/King.webp" alt="Deerwood Millwork workshop" loading="lazy" width="1730" height="1296">
       </div>
       <div class="about-text">
         <h2 class="section-heading reveal">A Legacy of <em>Quality</em><br>Since 1987</h2>
@@ -1190,58 +1204,58 @@
     </div>
 
     <div class="gallery-grid">
-      <div class="gallery-item reveal" data-src="images/gallery1.jpg">
-        <img class="gallery-img" src="images/gallery1.jpg" alt="333 Bay St">
+      <div class="gallery-item reveal" data-src="images/gallery1.webp">
+        <img class="gallery-img" loading="lazy" src="images/gallery1.webp" alt="333 Bay St">
         <div class="gallery-overlay"><div class="gallery-plus">+</div></div>
         <div class="gallery-img-label">333 Bay St</div>
       </div>
-      <div class="gallery-item reveal" data-src="images/gallery2.jpg">
-        <img class="gallery-img" src="images/gallery2.jpg" alt="333 Bay St">
+      <div class="gallery-item reveal" data-src="images/gallery2.webp">
+        <img class="gallery-img" loading="lazy" src="images/gallery2.webp" alt="333 Bay St">
         <div class="gallery-overlay"><div class="gallery-plus">+</div></div>
         <div class="gallery-img-label">333 Bay St</div>
       </div>
-      <div class="gallery-item reveal" data-src="images/gallery3.jpg">
-        <img class="gallery-img" src="images/gallery3.jpg" alt="Kingsett">
+      <div class="gallery-item reveal" data-src="images/gallery3.webp">
+        <img class="gallery-img" loading="lazy" src="images/gallery3.webp" alt="Kingsett">
         <div class="gallery-overlay"><div class="gallery-plus">+</div></div>
         <div class="gallery-img-label">Kingsett</div>
       </div>
-      <div class="gallery-item reveal" data-src="images/gallery4.jpg">
-        <img class="gallery-img" src="images/gallery4.jpg" alt="Kingsett">
+      <div class="gallery-item reveal" data-src="images/gallery4.webp">
+        <img class="gallery-img" loading="lazy" src="images/gallery4.webp" alt="Kingsett">
         <div class="gallery-overlay"><div class="gallery-plus">+</div></div>
         <div class="gallery-img-label">Kingsett</div>
       </div>
-      <div class="gallery-item reveal" data-src="images/gallery5.jpg">
-        <img class="gallery-img" src="images/gallery5.jpg" alt="SAP">
+      <div class="gallery-item reveal" data-src="images/gallery5.webp">
+        <img class="gallery-img" loading="lazy" src="images/gallery5.webp" alt="SAP">
         <div class="gallery-overlay"><div class="gallery-plus">+</div></div>
         <div class="gallery-img-label">SAP</div>
       </div>
-      <div class="gallery-item reveal" data-src="images/gallery6.jpg">
-        <img class="gallery-img" src="images/gallery6.jpg" alt="Pure">
+      <div class="gallery-item reveal" data-src="images/gallery6.webp">
+        <img class="gallery-img" loading="lazy" src="images/gallery6.webp" alt="Pure">
         <div class="gallery-overlay"><div class="gallery-plus">+</div></div>
         <div class="gallery-img-label">Pure</div>
       </div>
-      <div class="gallery-item reveal" data-src="images/gallery7.jpg">
-        <img class="gallery-img" src="images/gallery7.jpg" alt="333 Bay St">
+      <div class="gallery-item reveal" data-src="images/gallery7.webp">
+        <img class="gallery-img" loading="lazy" src="images/gallery7.webp" alt="333 Bay St">
         <div class="gallery-overlay"><div class="gallery-plus">+</div></div>
         <div class="gallery-img-label">333 Bay St</div>
       </div>
-      <div class="gallery-item reveal" data-src="images/gallery8.JPG">
-        <img class="gallery-img" src="images/gallery8.JPG" alt="Project">
+      <div class="gallery-item reveal" data-src="images/gallery8.webp">
+        <img class="gallery-img" loading="lazy" src="images/gallery8.webp" alt="Project">
         <div class="gallery-overlay"><div class="gallery-plus">+</div></div>
         <div class="gallery-img-label">Project</div>
       </div>
-      <div class="gallery-item reveal" data-src="images/gallery9.jpg">
-        <img class="gallery-img" src="images/gallery9.jpg" alt="Project">
+      <div class="gallery-item reveal" data-src="images/gallery9.webp">
+        <img class="gallery-img" loading="lazy" src="images/gallery9.webp" alt="Project">
         <div class="gallery-overlay"><div class="gallery-plus">+</div></div>
         <div class="gallery-img-label">Project</div>
       </div>
-      <div class="gallery-item reveal" data-src="images/gallery10.jpg">
-        <img class="gallery-img" src="images/gallery10.jpg" alt="Project">
+      <div class="gallery-item reveal" data-src="images/gallery10.webp">
+        <img class="gallery-img" loading="lazy" src="images/gallery10.webp" alt="Project">
         <div class="gallery-overlay"><div class="gallery-plus">+</div></div>
         <div class="gallery-img-label">Project</div>
       </div>
-      <div class="gallery-item reveal" data-src="images/gallery11.jpg">
-        <img class="gallery-img" src="images/gallery11.jpg" alt="Project">
+      <div class="gallery-item reveal" data-src="images/gallery11.webp">
+        <img class="gallery-img" loading="lazy" src="images/gallery11.webp" alt="Project">
         <div class="gallery-overlay"><div class="gallery-plus">+</div></div>
         <div class="gallery-img-label">Project</div>
       </div>
