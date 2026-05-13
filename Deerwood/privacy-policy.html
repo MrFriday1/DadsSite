@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | Deerwood Millwork</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --green-deep: #2d4a35;
+    --green-mid: #3d6b48;
+    --green-light: #5a8c66;
+    --green-muted: #c8d9cb;
+    --grey-dark: #1e1e1e;
+    --grey-mid: #4a4a4a;
+    --grey-light: #8a8a8a;
+    --grey-pale: #f2f2f0;
+    --white: #fafaf8;
+    --black: #111111;
+    --border: rgba(45, 74, 53, 0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--white);
+    color: var(--grey-dark);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 88px;
+    background: rgba(17, 17, 17, 0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--green-light);
+  }
+
+  .nav-logo span {
+    color: var(--white);
+    margin-right: 0.3em;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--green-light); }
+
+  .nav-cta {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--white) !important;
+    background: var(--green-deep);
+    padding: 10px 24px;
+    border: 1px solid var(--green-mid);
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--green-mid) !important; }
+
+  /* ─── PAGE CONTENT ─── */
+  .policy-page {
+    padding: 160px 0 100px;
+  }
+
+  .policy-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  .policy-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .policy-label::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 2px;
+    background: var(--green-mid);
+    flex-shrink: 0;
+  }
+
+  .policy-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--grey-dark);
+    margin-bottom: 48px;
+  }
+
+  .policy-section {
+    margin-bottom: 40px;
+  }
+
+  .policy-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--green-deep);
+    margin-bottom: 16px;
+  }
+
+  .policy-section p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--grey-mid);
+    margin-bottom: 16px;
+  }
+
+  .policy-section p:last-child { margin-bottom: 0; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--black);
+    padding: 48px 0;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-copy {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+  }
+
+  .footer-copy a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .policy-inner { padding: 0 24px; }
+    .policy-page { padding: 120px 0 80px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <span>Deerwood</span> Custom Millwork Solutions
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#our-work">Our Work</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#gallery">Gallery</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- ─── CONTENT ─── -->
+<div class="policy-page">
+  <div class="policy-inner">
+
+    <div class="policy-label">Legal</div>
+    <h1 class="policy-title">Privacy Policy</h1>
+
+    <div class="policy-section">
+      <p>Deerwood Millwork is committed to protecting the privacy, confidentiality, accuracy and security of the personal information that it collects, uses, retains and discloses in the course of conducting business.</p>
+      <p>The Privacy Policy summarizes the policies of Deerwood Millwork regarding the collection, use, and transfer of personal data, and regarding security measures Deerwood Millwork employs to protect such personal data. Please read this Privacy Policy carefully to understand how your personal data will be treated.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>Collection of Information</h2>
+      <p>Personal data such as name, title, company name, address, e-mail address, telephone, mobile and fax numbers, and other information may be collected by Deerwood Millwork from you in order for Deerwood Millwork to respond to a request for additional information about a product/service or about Deerwood Millwork. If you contact Deerwood Millwork, we may keep a record of that correspondence. Deerwood Millwork will ask you for personal data when you register for an event or educational session. Deerwood Millwork may also occasionally ask you to complete surveys that we may use for research.</p>
+      <p>Deerwood Millwork may collect personal data such as your name, title, company name, address, e-mail address, telephone and fax numbers, and other information may be collected for the purpose of fulfilling your inquiry.</p>
+      <p>In advance of any data collection you will be told the purpose for which the data will be used and Deerwood Millwork will make every effort to insure that the accuracy of the data on file remains current and up to date.</p>
+      <p>Be advised that Deerwood Millwork web site uses "cookie" technology and also logs IP addresses and browser information for purposes of system administration, identifying technical difficulties, evaluating traffic patterns and usage of web site, and otherwise providing content relevant to users of the web site. Deerwood Millwork uses this information to help make the web site more useful to browsers.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>Use, Disclosure, and Transfer of Personal Data</h2>
+      <p>You hereby agree that Deerwood Millwork may collect, use, store, maintain, transfer, and delete your personal data in accordance with this Privacy Policy. Deerwood Millwork will not release personal data protected by your account name and/or password, unless (i) releasing such information is otherwise required by applicable law, stature, regulation, ordinance, or court order or (ii) Deerwood Millwork has reason to believe that disclosing such information is necessary to identify, contact, or bring legal action against someone who may be violating the Terms and Conditions of Use or may be causing injury to or interference with (either intentionally or unintentionally) Deerwood Millwork's rights or property, other Deerwood Millwork members or affiliates, or anyone else that could be harmed by such activities. Where Deerwood Millwork does release your personal data to Deerwood Millwork members or business partners, Deerwood Millwork will first require them to agree to use such personal data in accordance with this Privacy Policy and only for the purposes for which the data was collected.</p>
+      <p>Deerwood Millwork reserves the right to use aggregated data (data that is not individually identifiable). Such aggregate uses could include, but are not limited to, evaluation, business analysis, and otherwise meeting Deerwood Millwork's marketing and business objectives.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>Data Security and Integrity</h2>
+      <p>When you provide personal data to Deerwood Millwork, such data is stored on secured servers that are protected by this Privacy Policy regardless of where they may be located. Deerwood Millwork takes reasonable steps to protect your personal data from loss, misuse, or other unauthorized uses, and to remove your personal data when it is no longer required for its intended purposes. Deerwood Millwork cannot, however, guarantee that loss, misuses, or unauthorized use will never occur (e.g., that someone will not overcome our security measures), and makes no representations or warranties to this effect.</p>
+      <p>Please be aware that the Deerwood Millwork web site may contain links to third-party web sites that this Privacy Policy does not apply to such web sites and that Deerwood Millwork is not responsible for the privacy practices, content, or conduct of or on such web sites. Deerwood Millwork provides these links solely for your information and convenience. By using the Deerwood Millwork web site, you agree to the terms and conditions of this Privacy Policy.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>Our Commitment to You</h2>
+      <p>Maintaining the security of your personal information is a top priority. Only authorized personnel have access to your information. Our systems and procedures are designed to prevent the loss, misuse, unauthorized access, disclosure, alteration, and destruction of your information. Our commitment to security is emphasized in our Code of Ethics by OBSERVING THE HIGHEST STANDARDS OF INTEGRITY and extends to the contracts and agreements that we sign with external suppliers and service providers. We will only retain your information for as long as required for the purposes for which it was collected and/or any legal or regulatory requirements.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>Changes to the Privacy Policy</h2>
+      <p>Deerwood Millwork reserves the right to change this Privacy Policy from time to time and at its sole discretion. If the Privacy Policy for Deerwood Millwork changes, the revised policy will be posted at the Privacy Policy link on Deerwood Millwork's web site home page. Any material changes in the Privacy Policy will be brought to the attention of members via a Bulletin. This Privacy Policy was last updated on January 1, 2014.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-copy">&copy; Deerwood Millwork &nbsp;|&nbsp; deerwoodmillwork.com &nbsp;|&nbsp; All rights reserved &nbsp;|&nbsp; <a href="privacy-policy.html">Deerwood Millwork Privacy Policy</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
