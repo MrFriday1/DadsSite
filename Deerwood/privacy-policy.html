@@ -95,21 +95,29 @@
 
   .mobile-nav a:hover { color: var(--green-light); }
 
-  .nav-logo {
+  .stacked-logo {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    gap: 4px;
     text-decoration: none;
-    font-family: 'Cinzel', serif;
-    font-size: 1.45rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--green-light);
-    white-space: nowrap;
     flex-shrink: 0;
   }
 
-  .nav-logo .logo-name { color: var(--white); }
+  .logo-main {
+    font-family: Georgia, serif;
+    font-size: 26px;
+    letter-spacing: 7px;
+    color: #f4f4f4;
+    text-transform: uppercase;
+  }
+
+  .logo-sub {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #6fa06f;
+    font-weight: 600;
+  }
 
   .nav-links {
     display: flex;
@@ -243,7 +251,7 @@
 
   @media (max-width: 1350px) {
     nav { padding: 0 28px; }
-    .logo-tagline { display: none; }
+    .logo-sub { display: none; }
     .nav-links { gap: 20px; }
   }
 
@@ -252,19 +260,22 @@
     .nav-links { display: none; }
     .hamburger { display: none; }
     .mobile-nav { display: none !important; }
-    .logo-tagline { display: none; }
-    .nav-logo {
+    .logo-sub { display: none; }
+    .stacked-logo {
       border: 1px solid rgba(90,140,102,0.45);
       padding: 8px 20px;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
     }
-    .nav-logo::before {
+    .stacked-logo::before {
       content: '←';
-      margin-right: 10px;
       font-family: sans-serif;
       font-size: 1rem;
       letter-spacing: 0;
       color: var(--green-light);
     }
+    .logo-sub { display: none; }
     .policy-inner { padding: 0 24px; }
     .policy-page { padding: 120px 0 80px; }
   }
@@ -274,8 +285,9 @@
 
 <!-- ─── NAV ─── -->
 <nav id="main-nav">
-  <a href="index.html" class="nav-logo">
-    <span class="logo-name">Deerwood</span><span class="logo-tagline">&nbsp;Custom Millwork Solutions</span>
+  <a href="index.html" class="stacked-logo">
+    <span class="logo-main">Deerwood</span>
+    <span class="logo-sub">Custom Millwork Solutions</span>
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
