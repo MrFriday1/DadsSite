@@ -66,12 +66,11 @@
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--green-light);
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
-  .nav-logo span { 
-    color: var(--white); 
-
-  }
+  .nav-logo .logo-name { color: var(--white); }
 
   .nav-links {
     display: flex;
@@ -104,6 +103,8 @@
     padding: 10px 24px;
     border: 1px solid var(--green-mid);
     transition: background 0.2s !important;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .nav-cta:hover { background: var(--green-mid) !important; color: var(--white) !important; }
@@ -171,8 +172,8 @@
   }
 
   .hero-logo {
-    width: 500px;
-    max-width: 80vw;
+    width: 400px;
+    max-width: 70vw;
     height: auto;
     display: block;
     margin-bottom: 32px;
@@ -223,11 +224,11 @@
 
   .hero-sub {
     font-family: 'Inter', sans-serif;
-    font-size: 1.15rem;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 1.75;
     color: rgba(255,255,255,0.95);
-    max-width: 560px;
+    max-width: 520px;
     margin-bottom: 40px;
     opacity: 0;
     animation: fadeUp 0.8s 0.6s forwards;
@@ -933,6 +934,19 @@
   .mobile-nav a:hover { color: var(--green-light); }
 
   /* ─── RESPONSIVE ─── */
+  @media (max-width: 1350px) {
+    nav { padding: 0 28px; }
+    .logo-tagline { display: none; }
+    .nav-links { gap: 20px; }
+  }
+
+  @media (max-width: 1280px) {
+    .hero-logo { width: 300px; }
+    .hero-content { padding: 0 56px 60px; }
+    .hero-sub { font-size: 0.92rem; }
+    .btn-primary, .btn-outline { padding: 13px 28px; font-size: 0.85rem; }
+  }
+
   @media (max-width: 1024px) {
     .work-intro { grid-template-columns: 1fr; gap: 40px; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
@@ -940,12 +954,16 @@
   }
 
   @media (max-width: 768px) {
-    nav { padding: 0 24px; }
-    .nav-links { display: none; }
-    .hamburger { display: flex; }
+    nav { display: none; }
+    .mobile-nav { display: none !important; }
 
-    .hero-content { padding: 0 24px 64px; }
-    .hero-dots { right: 24px; }
+    .hero-content { padding: 0 24px 64px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+    .hero-logo { margin: 0 auto 32px; }
+    .hero-eyebrow { justify-content: center; }
+    .hero-eyebrow::before { display: none; }
+    .hero-sub { max-width: 100%; }
+    .hero-actions { justify-content: center; }
+    .hero-dots { display: none; }
 
     .section-inner { padding: 0 24px; }
     .section-heading { font-size: 2rem; }
@@ -966,6 +984,12 @@
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
     .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
     .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none; }
+    .stats-band { padding: 20px 0; }
+    .stat-visual { height: 80px; margin-bottom: 16px; }
+    .stat-visual img { height: 60px !important; width: auto; max-width: 90%; }
+    .stat-num { font-size: 4.8rem; }
+    .stat-num sup { font-size: 1.6rem; }
+    .stat-label { font-size: 0.78rem; }
   }
 
   @media (max-width: 480px) {
@@ -991,7 +1015,7 @@
 <!-- ─── NAV ─── -->
 <nav id="main-nav">
   <a href="#home" class="nav-logo">
-    <span>Deerwood&nbsp;</span>Custom Millwork Solutions
+    <span class="logo-name">Deerwood</span><span class="logo-tagline">&nbsp;Custom Millwork Solutions</span>
   </a>
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
@@ -1005,13 +1029,13 @@
   </button>
 </nav>
 
-<nav class="mobile-nav" id="mobile-nav">
+<div class="mobile-nav" id="mobile-nav">
   <a href="#home" onclick="closeMobile()">Home</a>
   <a href="#our-work" onclick="closeMobile()">Our Work</a>
   <a href="#about" onclick="closeMobile()">About</a>
   <a href="#gallery" onclick="closeMobile()">Gallery</a>
   <a href="#contact" onclick="closeMobile()">Contact</a>
-</nav>
+</div>
 
 <!-- ─── HERO ─── -->
 <section id="home">

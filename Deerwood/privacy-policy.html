@@ -4,9 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy | Deerwood Millwork</title>
+<link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+<link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+<link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
   :root {
@@ -45,24 +49,67 @@
     background: rgba(17, 17, 17, 0.96);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: background 0.3s;
   }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    transition: all 0.3s;
+  }
+
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    top: 88px; left: 0; right: 0; bottom: 0;
+    background: rgba(17,17,17,0.98);
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  .mobile-nav.open { display: flex; }
+
+  .mobile-nav a {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .mobile-nav a:hover { color: var(--green-light); }
 
   .nav-logo {
     display: flex;
     align-items: center;
     text-decoration: none;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+    font-family: 'Cinzel', serif;
+    font-size: 1.45rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--green-light);
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
-  .nav-logo span {
-    color: var(--white);
-    margin-right: 0.3em;
-  }
+  .nav-logo .logo-name { color: var(--white); }
 
   .nav-links {
     display: flex;
@@ -95,6 +142,8 @@
     padding: 10px 24px;
     border: 1px solid var(--green-mid);
     transition: background 0.2s !important;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .nav-cta:hover { background: var(--green-mid) !important; }
@@ -192,8 +241,30 @@
     text-decoration: underline;
   }
 
+  @media (max-width: 1350px) {
+    nav { padding: 0 28px; }
+    .logo-tagline { display: none; }
+    .nav-links { gap: 20px; }
+  }
+
   @media (max-width: 768px) {
+    nav { display: flex; padding: 0 24px; justify-content: center; }
     .nav-links { display: none; }
+    .hamburger { display: none; }
+    .mobile-nav { display: none !important; }
+    .logo-tagline { display: none; }
+    .nav-logo {
+      border: 1px solid rgba(90,140,102,0.45);
+      padding: 8px 20px;
+    }
+    .nav-logo::before {
+      content: '←';
+      margin-right: 10px;
+      font-family: sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0;
+      color: var(--green-light);
+    }
     .policy-inner { padding: 0 24px; }
     .policy-page { padding: 120px 0 80px; }
   }
@@ -202,9 +273,9 @@
 <body>
 
 <!-- ─── NAV ─── -->
-<nav>
+<nav id="main-nav">
   <a href="index.html" class="nav-logo">
-    <span>Deerwood</span> Custom Millwork Solutions
+    <span class="logo-name">Deerwood</span><span class="logo-tagline">&nbsp;Custom Millwork Solutions</span>
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
@@ -213,7 +284,18 @@
     <li><a href="index.html#gallery">Gallery</a></li>
     <li><a href="index.html#contact" class="nav-cta">Contact Us</a></li>
   </ul>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="index.html#our-work" onclick="closeMobile()">Our Work</a>
+  <a href="index.html#about" onclick="closeMobile()">About</a>
+  <a href="index.html#gallery" onclick="closeMobile()">Gallery</a>
+  <a href="index.html#contact" onclick="closeMobile()">Contact</a>
+</div>
 
 <!-- ─── CONTENT ─── -->
 <div class="policy-page">
@@ -267,5 +349,11 @@
   </div>
 </footer>
 
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+  hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
+  function closeMobile() { mobileNav.classList.remove('open'); }
+</script>
 </body>
 </html>
